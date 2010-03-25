@@ -1,0 +1,201 @@
+package org.jboss.deltacloud.client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.JAXB;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.jboss.deltacloud.client.model.Flavor;
+import org.jboss.deltacloud.client.model.Image;
+import org.jboss.deltacloud.client.model.Instance;
+import org.jboss.deltacloud.client.model.Realm;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+public class DeltaCloudClient implements API 
+{
+	DefaultHttpClient httpClient;
+	
+	URL baseUrl;
+	
+	public DeltaCloudClient(URL url, String username, String password) throws MalformedURLException
+	{
+		this.baseUrl = url;
+		
+        httpClient = new DefaultHttpClient();
+        httpClient.getCredentialsProvider().setCredentials(new AuthScope(url.getHost(), url.getPort()), new UsernamePasswordCredentials(username, password));
+	}
+
+	private InputStream sendRequest(String path) throws DeltaCloudException
+	{
+		String requestUrl = baseUrl.toString() + path;
+		System.out.println("request: " + requestUrl);
+		try
+		{
+			HttpGet httpget = new HttpGet(requestUrl);
+			httpget.setHeader("Accept", "text/xml");
+                
+			HttpResponse httpResponse = httpClient.execute(httpget);
+			HttpEntity entity = httpResponse.getEntity();
+        
+			if (entity != null)
+			{
+				InputStream is = entity.getContent();
+				//entity.consumeContent();
+				httpClient.getConnectionManager().shutdown();
+				
+				return is;
+			}
+			
+		}
+		catch(IOException e)
+		{
+			throw new DeltaCloudException("Error processing request to: " + requestUrl, e);
+		}
+		throw new DeltaCloudException("Could not execute request to:" + requestUrl);
+	}
+	
+	private static String readInputStreamToString(InputStream is) throws DeltaCloudException
+	{
+		try
+		{
+			try
+			{
+				if (is != null)
+				{
+					StringBuilder sb = new StringBuilder();
+					String line;
+					
+					BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+					while ((line = reader.readLine()) != null) 
+					{
+						sb.append(line).append("\n");	
+					}
+					return sb.toString();
+				}
+			}
+			finally
+			{
+				is.close();
+			}
+		}
+		catch(Exception e)
+		{
+			throw new DeltaCloudException(e);
+		}
+		return "";
+	}
+	
+	@Override
+	public Instance createInstance(String imageId) throws DeltaCloudException 
+	{
+		return null;
+	}
+	
+	@Override
+	public Instance createInstance(String imageId, String flavor, String realm) throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Flavor listFlavor(String flavorId) throws DeltaCloudException 
+	{
+		return JAXB.unmarshal(sendRequest("/flavors/" + flavorId), Flavor.class);
+	}
+
+	@Override
+	public List<Flavor> listFlavors() throws DeltaCloudException 
+	{
+		return null;
+	}
+	
+
+	@Override
+	public List<Image> listImages() throws DeltaCloudException 
+	{
+		try
+		{
+			InputStream is = sendRequest("/images/");
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document document = db.parse(is);
+			
+			ArrayList<Image> images = new ArrayList<Image>();
+			
+			NodeList nodeList = document.getElementsByTagName("id");
+			for(int i = 0; i < nodeList.getLength(); i ++)
+			{
+				images.add(listImages(nodeList.item(i).getTextContent()));
+			}
+			return images;	
+		}
+		catch(Exception e)
+		{
+			
+		}
+		throw new DeltaCloudException("Could not List Images");
+		
+		
+		
+	}
+
+	@Override
+	public Image listImages(String imageId) throws DeltaCloudException 
+	{
+		return JAXB.unmarshal(sendRequest("/images/" + imageId), Image.class);
+	}
+
+	@Override
+	public List<Instance> listInstance() throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Instance listInstances(String instanceId) throws DeltaCloudException 
+	{
+		return JAXB.unmarshal(sendRequest("/instances/" + instanceId), Instance.class);
+	}
+
+	@Override
+	public List<Realm> listRealms() throws DeltaCloudException 
+	{
+		return null;
+	}
+
+	@Override
+	public Realm listRealms(String realmId) throws DeltaCloudException 
+	{
+		return JAXB.unmarshal(sendRequest("/realms/" + realmId), Realm.class);
+	}
+
+	@Override
+	public void rebootInstance(String instanceId) throws DeltaCloudException
+	{
+		sendRequest("/instances/" + instanceId + "/reboot");
+	}
+
+	@Override
+	public void shutdownInstance(String instanceId) throws DeltaCloudException 
+	{
+		sendRequest("/instances/" + instanceId + "/shutdown");
+	}
+}

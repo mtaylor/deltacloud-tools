@@ -1,0 +1,32 @@
+package org.jboss.deltacloud.client;
+
+import java.util.List;
+import org.jboss.deltacloud.client.model.*;
+
+public interface APIInterface 
+{
+	public List<Realm> listRealms() throws DeltaCloudException;
+	
+	public Realm listRealms(String realmId) throws DeltaCloudException;
+	
+	public List<Flavor> listFlavors() throws DeltaCloudException;
+	
+	public Flavor listFlavor(String flavorId) throws DeltaCloudException;
+	
+	public List<Image> listImages() throws DeltaCloudException;
+	
+	public Image listImages(String imageId) throws DeltaCloudException;
+	
+	public List<Instance> listInstance() throws DeltaCloudException;
+	
+	public Instance listInstances(String instanceId) throws DeltaCloudException;
+	
+	public Instance createInstance(String imageId) throws DeltaCloudException;
+	
+	public Instance createInstance(String imageId, String flavor, String realm) throws DeltaCloudException;
+	
+	public void rebootInstance(String instanceId);
+	
+	public void shutdownInstance(String instanceId);
+	
+}

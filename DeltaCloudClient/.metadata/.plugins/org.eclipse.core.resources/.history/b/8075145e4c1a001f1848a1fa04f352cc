@@ -1,0 +1,27 @@
+package org.jboss.deltacloud.client.model;
+
+import java.util.ArrayList;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="flavors")
+public class Flavors 
+{
+	public ArrayList<Flavor> flavors;
+	
+	public Flavors()
+	{
+	}
+	
+	public ArrayList<Flavor> getFlavors() 
+	{
+		return flavors;
+	}
+
+	public void setFlavors(ArrayList<Flavor> flavors) 
+	{
+		this.flavors = flavors;
+	}
+	
+	
+}

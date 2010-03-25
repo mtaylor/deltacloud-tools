@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234290646
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234290702
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234290760
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234290834
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234290878
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.redo",1266234293771
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234299485
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234314529
+activated,view,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.PackageExplorer",1266234317055
+error,log,,,"No property tester contributes a property com.aptana.ide.core.ui.nature to type class org.eclipse.jdt.internal.core.JavaProject",1266234317056
+error,log,,,"No property tester contributes a property com.aptana.ide.core.ui.nature to type class org.eclipse.jdt.internal.core.JavaProject",1266234318284
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234322958
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234336269
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234337144
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234380744
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266234382678
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.paste",1266234384618
+executed,command,,,"AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction",1266234397741
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234401916
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234455839
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234457463
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234504935
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234509596
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234509905
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234510165

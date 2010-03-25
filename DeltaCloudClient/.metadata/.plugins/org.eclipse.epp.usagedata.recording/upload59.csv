@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1266243073538
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243083336
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243084378
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243099939
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243100855
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.text.contentAssist.proposals",1266243131904
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1266243133627
+executed,command,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.edit.text.java.toggle.comment",1266243192744
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243196517
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243197484
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243219330
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243220219
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266243226329
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266243228120
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266243229360
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.text.contentAssist.proposals",1266243254715
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243264281
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243265265
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243288978
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243339171
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1266243344436
+opened,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266243351775
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266243351947
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1266243358609
+no handler,command,org.eclipse.datatools.sqltools.result.ui,,"org.eclipse.datatools.sqltools.result.removeAllInstances",1266243374460

@@ -1,0 +1,76 @@
+package org.jboss.deltacloud.client.model;
+
+import javax.xml.bind.annotation.XmlElement;
+
+public class Image 
+{
+	private String id;
+	
+	private String ownerId;
+	
+	private String name;
+	
+	private String description;
+	
+	private String architecture;
+	
+	public Image()
+	{
+	}
+	
+	public String getId() 
+	{
+		return id;
+	}
+
+	//@XmlElement(name="owner_id")
+	public String getOwnerId() 
+	{
+		return ownerId;
+	}
+
+	public String getName() 
+	{
+		return name;
+	}
+
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public String getArch() 
+	{
+		return architecture;
+	}
+	
+	public String getArchitecture() 
+	{
+		return architecture;
+	}
+
+	public void setArchitecture(String architecture) 
+	{
+		this.architecture = architecture;
+	}
+
+	public void setId(String id) 
+	{
+		this.id = id;
+	}
+
+	public void setOwnerId(String ownerId) 
+	{
+		this.ownerId = ownerId;
+	}
+
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+
+	public void setDescription(String description) 
+	{
+		this.description = description;
+	}
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="/opt/eclipse/plugins/org.jruby_1.2.0.9419p2" version="1.8.6" vmTypeId="org.rubypeople.rdt.launching.JRubyVMType">
+<bootpath>
+<entry path="/opt/eclipse/plugins/org.jruby_1.2.0.9419p2/lib/ruby/site_ruby/1.8"/>
+<entry path="/opt/eclipse/plugins/org.jruby_1.2.0.9419p2/lib/ruby/site_ruby"/>
+<entry path="/opt/eclipse/plugins/org.jruby_1.2.0.9419p2/lib/ruby/1.8"/>
+</bootpath>
+</libraryInfo>
+<libraryInfo home="/usr" version="1.8.6" vmTypeId="org.rubypeople.rdt.launching.StandardVMType">
+<bootpath>
+<entry path="/usr/lib/ruby/site_ruby/1.8"/>
+<entry path="/usr/lib/ruby/site_ruby/1.8/i386-linux"/>
+<entry path="/usr/lib/ruby/site_ruby"/>
+<entry path="/usr/lib/ruby/1.8"/>
+<entry path="/usr/lib/ruby/1.8/i386-linux"/>
+</bootpath>
+</libraryInfo>
+</libraryInfos>

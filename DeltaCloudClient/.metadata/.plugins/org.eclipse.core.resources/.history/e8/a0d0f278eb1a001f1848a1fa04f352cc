@@ -1,0 +1,49 @@
+package org.jboss.deltacloud.client.model;
+
+public class Flavor extends DeltaCloudObject
+{
+	private static final long serialVersionUID = 1L;
+
+	private String architecture;
+	
+	private String memory;
+	
+	private String storage;
+	
+	private Flavor()
+	{	
+	}
+
+	@SuppressWarnings("unused")
+	private void setArchitecture(String architecture)
+	{
+		this.architecture = architecture;
+	}
+
+	@SuppressWarnings("unused")
+	private void setMemory(String memory)
+	{
+		this.memory = memory;
+	}
+
+	@SuppressWarnings("unused")
+	private void setStorage(String storage)
+	{
+		this.storage = storage;
+	}
+
+	public String getArchitecture()
+	{
+		return architecture;
+	}
+
+	public String getMemory()
+	{
+		return memory;
+	}
+
+	public String getStorage()
+	{
+		return storage;
+	}
+}

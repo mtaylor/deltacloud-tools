@@ -1,0 +1,56 @@
+package org.jboss.deltacloud.client.model;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="flavor")
+public class Flavor 
+{
+	@XmlElement(name="id")
+	private String id;
+	
+	@XmlElement(name="architecture")
+	private String architecture;
+	
+	@XmlElement(name="memory")
+	private String memory;
+	
+	@XmlElement(name="storage")
+	private String storage;
+	
+	public Flavor()
+	{	
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getArchitecture() {
+		return architecture;
+	}
+
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
+	}
+
+	public String getMemory() {
+		return memory;
+	}
+
+	public void setMemory(String memory) {
+		this.memory = memory;
+	}
+
+	public String getStorage() {
+		return storage;
+	}
+
+	public void setStorage(String storage) {
+		this.storage = storage;
+	}	
+}

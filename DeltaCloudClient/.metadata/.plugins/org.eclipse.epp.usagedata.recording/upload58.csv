@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266242921410
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266242921772
+executed,command,,,"AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction",1266242928572
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1266242933364
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266242935041
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1266242949549
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266242953156
+started,bundle,org.eclipse.jst.jsp.ui,1.1.401.v200908111935,"org.eclipse.jst.jsp.ui",1266242959330
+started,bundle,org.eclipse.pde.core,3.5.100.v20090821,"org.eclipse.pde.core",1266242959449
+started,bundle,org.eclipse.ant.ui,3.4.1.v20090901_r351,"org.eclipse.ant.ui",1266242959478
+error,log,,,"A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.",1266242959554
+started,bundle,org.eclipse.jst.jsp.core,1.2.203.v200908241513,"org.eclipse.jst.jsp.core",1266242959596
+executed,command,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.edit.text.java.rename.element",1266242961553
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266242961580
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266242968869
+executed,command,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.edit.text.java.rename.element",1266242978754
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266242978801
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266242980550
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266243019957
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266243021599
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266243022443
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266243023314
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266243024320
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243027292
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266243047498

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,com.aptana.ide.editors,2.0.0.1256761519,"com.aptana.ide.editors",1265987857711
+started,bundle,com.aptana.ide.scripting,2.0.0.1260993686,"com.aptana.ide.scripting",1265987857728
+started,bundle,com.aptana.ide.server.jetty,2.0.0.1256341583,"com.aptana.ide.server.jetty",1265987857780
+started,bundle,com.aptana.ide.update.ui,2.0.0.1265135074,"com.aptana.ide.update.ui",1265987857789
+started,bundle,com.aptana.radrails.intro,2.0.0.1256853868,"com.aptana.radrails.intro",1265987857852
+started,bundle,com.aptana.ide.server.portal,2.0.0.1261003788,"com.aptana.ide.server.portal",1265987857887
+started,bundle,com.aptana.ide.server,2.0.0.1253913567,"com.aptana.ide.server",1265987858368
+started,bundle,org.eclipse.eclipsemonkey,2.0.0.1256160806,"org.eclipse.eclipsemonkey",1265987858628
+started,bundle,org.eclipse.eclipsemonkey.lang.javascript,2.0.0.1253913567,"org.eclipse.eclipsemonkey.lang.javascript",1265987858643
+started,bundle,org.eclipse.eclipsemonkey.lang.ruby,1.2.2.1252597864,"org.eclipse.eclipsemonkey.lang.ruby",1265987858648
+started,bundle,com.aptana.ide.documentation,2.0.0.1256597898,"com.aptana.ide.documentation",1265987860721
+started,bundle,com.aptana.ide.samples.ui,2.0.0.1265135074,"com.aptana.ide.samples.ui",1265987860746
+started,bundle,com.aptana.ide.update.portal,2.0.0.1265135074,"com.aptana.ide.update.portal",1265987860776
+opened,editor,com.aptana.ide.server.portal,2.0.0.1261003788,"com.aptana.ide.server.portal.ui.MyAptanaEditor",1265987860791
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1265987861020
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1265987861600
+closed,view,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.internal.introview",1265987861629
+started,bundle,org.eclipse.eclipsemonkey.doms,2.0.0.1253913567,"org.eclipse.eclipsemonkey.doms",1265987861984
+started,bundle,com.aptana.ide.server.core,2.0.0.1253913567,"com.aptana.ide.server.core",1265987862075
+activated,editor,com.aptana.ide.server.portal,2.0.0.1261003788,"com.aptana.ide.server.portal.ui.MyAptanaEditor",1265987867846
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1265987867954
+closed,editor,com.aptana.ide.server.portal,2.0.0.1261003788,"com.aptana.ide.server.portal.ui.MyAptanaEditor",1265987867954
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1265987871330
+started,bundle,org.eclipse.jdt.launching,3.5.0.v20090527,"org.eclipse.jdt.launching",1265987877053
+error,log,,,"Internal Error",1265987883162

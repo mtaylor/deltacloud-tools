@@ -1,0 +1,6 @@
+package org.jboss.deltacloud.client.model;
+
+public class Flavors
+{
+
+}

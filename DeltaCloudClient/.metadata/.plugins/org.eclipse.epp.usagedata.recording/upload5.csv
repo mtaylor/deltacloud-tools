@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,com.aptana.ide.syncing.core,2.0.3.1265135074,"com.aptana.ide.syncing.core",1265987857359
+started,bundle,com.aptana.ide.syncing.ui,2.0.3.1265135074,"com.aptana.ide.syncing.ui",1265987857359
+started,bundle,com.aptana.ide.update,2.0.0.1256853725,"com.aptana.ide.update",1265987857360
+started,bundle,com.aptana.ide.update.eclipse34,2.0.0.1265135074,"com.aptana.ide.update.eclipse34",1265987857360
+started,bundle,com.aptana.ide.update.eclipse35,2.0.0.1265135074,"com.aptana.ide.update.eclipse35",1265987857361
+os,sysinfo,,,"linux",1265987857365
+arch,sysinfo,,,"x86",1265987857365
+ws,sysinfo,,,"gtk",1265987857365
+locale,sysinfo,,,"en_US",1265987857365
+processors,sysinfo,,,"2",1265987857366
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1265987857366
+java.runtime.version,sysinfo,,,"1.6.0_18-b07",1265987857366
+java.specification.name,sysinfo,,,"Java Platform API Specification",1265987857366
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1265987857366
+java.specification.version,sysinfo,,,"1.6",1265987857366
+java.vendor,sysinfo,,,"Sun Microsystems Inc.",1265987857366
+java.version,sysinfo,,,"1.6.0_18",1265987857366
+java.vm.info,sysinfo,,,"mixed mode, sharing",1265987857366
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1265987857366
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1265987857366
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1265987857366
+java.vm.specification.version,sysinfo,,,"1.0",1265987857366
+java.vm.vendor,sysinfo,,,"Sun Microsystems Inc.",1265987857366
+java.vm.version,sysinfo,,,"16.0-b13",1265987857366
+started,bundle,org.eclipse.debug.ui,3.5.1.v20090811_r351,"org.eclipse.debug.ui",1265987857456

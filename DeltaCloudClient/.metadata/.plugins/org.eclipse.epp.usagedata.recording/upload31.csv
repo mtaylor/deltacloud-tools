@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234510391
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234510748
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234511043
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1266234511475
+activated,view,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.PackageExplorer",1266234528622
+error,log,,,"No property tester contributes a property com.aptana.ide.core.ui.nature to type class org.eclipse.jdt.internal.core.JavaProject",1266234530730
+error,log,,,"No property tester contributes a property com.aptana.ide.core.ui.nature to type class org.eclipse.jdt.internal.core.JavaProject",1266234537154
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234539987
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234553109
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1266234556207
+executed,command,,,"AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction",1266234556960
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1266234558495
+executed,command,,,"AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction",1266234562581
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234563925
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234564168
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234571656
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234573924
+executed,command,,,"AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction",1266234575801
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234576430
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234576650
+executed,command,,,"AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction",1266234578485
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234579206
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234579447
+executed,command,,,"AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction",1266234581229
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266234582139

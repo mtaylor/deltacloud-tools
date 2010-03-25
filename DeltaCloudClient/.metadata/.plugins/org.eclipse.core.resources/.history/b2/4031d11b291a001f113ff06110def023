@@ -1,0 +1,21 @@
+package org.jboss.deltacloud.client;
+
+import java.net.URL;
+
+public class API 
+{
+	private URL url;
+	
+	private String username;
+	
+	private String password;
+	
+	public API(URL url, String username, String password)
+	{
+		this.url = url;
+		
+		this.username = username;
+		
+		this.password = password;
+	}
+}

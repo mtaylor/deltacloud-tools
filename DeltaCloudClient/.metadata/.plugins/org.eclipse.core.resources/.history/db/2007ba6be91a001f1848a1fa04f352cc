@@ -1,0 +1,21 @@
+package org.jboss.deltacloud.client.model;
+
+import java.io.Serializable;
+
+public abstract class DeltaCloudObject implements Serializable
+{
+	private static final long serialVersionUID = 1L;
+	
+	protected String id;
+
+	private String getId() 
+	{
+		return id;
+	}
+
+	@SuppressWarnings("unused")
+	private void setId(String id) 
+	{
+		this.id = id;
+	}
+}

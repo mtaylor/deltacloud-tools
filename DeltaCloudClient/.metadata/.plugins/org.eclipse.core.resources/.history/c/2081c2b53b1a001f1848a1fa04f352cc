@@ -1,0 +1,34 @@
+package org.jboss.deltacloud.client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.List;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.jboss.deltacloud.client.model.Flavor;
+
+public class RESTClient 
+{
+	public static void main(String[] args) throws Exception
+	{
+		API api = new API(new URL("http://localhost:3003/api"), "mockuser", "mockpassword");
+		
+		List<Flavor> flavors = api.listFlavors();
+		
+		for(Flavor flavor : flavors)
+		{
+			System.out.println(flavor.getId() + "\t" + flavor.getMemory() + "\t" + flavor.getArch() + "\t" + flavor.getStorage());
+		}
+
+	}
+	
+	
+}

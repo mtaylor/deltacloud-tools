@@ -1,0 +1,32 @@
+package org.jboss.deltacloud.client.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(name="ParentType")
+public class Flavors 
+{
+    @XmlElement(name="flavor")
+    @XmlElementWrapper( name="flavors" )
+	public List<Flavor> flavor;
+	
+	public Flavors()
+	{
+	}
+	
+	public void setFlavor(List<Flavor> flavor) 
+	{
+		this.flavor = flavor;
+	}
+	
+	public List getFlavor()
+	{
+		if( flavor == null ) flavor = new ArrayList();
+        return flavor;
+	}
+}
+

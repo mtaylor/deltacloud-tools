@@ -1,0 +1,34 @@
+package org.jboss.deltacloud.client;
+
+public class Realm 
+{
+	private String id;
+	
+	private String name;
+	
+	private String state;
+	
+	private int limit;
+
+	public String getId() 
+	{
+		return id;
+	}
+
+	public String getName() 
+	{
+		return name;
+	}
+
+	public String getState() 
+	{
+		return state;
+	}
+
+	public int getLimit() 
+	{
+		return limit;
+	}
+	
+	
+}

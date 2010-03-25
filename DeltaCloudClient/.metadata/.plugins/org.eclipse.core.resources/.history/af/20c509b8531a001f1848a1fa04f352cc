@@ -1,0 +1,22 @@
+package org.jboss.deltacloud.client;
+
+import java.net.URL;
+import java.util.List;
+
+import org.jboss.deltacloud.client.model.Flavor;
+
+public class RESTClient 
+{
+	public static void main(String[] args) throws Exception
+	{
+		DeltaCloudClient api = new DeltaCloudClient(new URL("http://localhost:3003/api"), "mockuser", "mockpassword");
+		//Flavor f = api.listFlavor("c1-medium");
+		
+		List<Flavor> flavors = api.listFlavors();
+//		System.out.println("List size: " + flavors.size());
+//		for(Flavor flavor : flavors)
+//		{
+//			System.out.println(flavor.getId() + "\t" + flavor.getMemory() + "\t" + flavor.getArchitecture() + "\t" + flavor.getStorage());
+//		}
+	}
+}

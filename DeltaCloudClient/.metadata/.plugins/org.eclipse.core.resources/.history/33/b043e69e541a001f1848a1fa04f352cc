@@ -1,0 +1,16 @@
+package org.jboss.deltacloud.client;
+
+import java.net.URL;
+import java.util.List;
+
+import org.jboss.deltacloud.client.model.Flavor;
+
+public class RESTClient 
+{
+	public static void main(String[] args) throws Exception
+	{
+		DeltaCloudClient api = new DeltaCloudClient(new URL("http://localhost:3003/api"), "mockuser", "mockpassword");
+		api.listInstances("inst3");
+		
+	}
+}

@@ -1,0 +1,177 @@
+package org.jboss.deltacloud.client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+
+import javax.xml.bind.JAXB;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.jboss.deltacloud.client.model.Flavor;
+import org.jboss.deltacloud.client.model.Image;
+import org.jboss.deltacloud.client.model.Instance;
+import org.jboss.deltacloud.client.model.Realm;
+
+public class API implements APIInterface 
+{
+	DefaultHttpClient httpClient;
+	
+	URL baseUrl;
+	
+	public API(URL url, String username, String password) throws MalformedURLException
+	{
+		this.baseUrl = url;
+		
+        DefaultHttpClient httpClient = new DefaultHttpClient();
+        httpClient.getCredentialsProvider().setCredentials(new AuthScope(url.getHost(), url.getPort()), new UsernamePasswordCredentials(username, password));
+	}
+
+	private InputStream sendRequest(String path) throws DeltaCloudException
+	{
+		String requestUrl = baseUrl.toString() + path;
+		try
+		{
+			HttpGet httpget = new HttpGet(requestUrl);
+			httpget.setHeader("Accept", "text/xml");
+                
+			HttpResponse httpResponse = httpClient.execute(httpget);
+			HttpEntity entity = httpResponse.getEntity();
+        
+			if (entity != null)
+			{
+				InputStream is = entity.getContent();
+				entity.consumeContent();
+				
+				return is;
+				
+			}
+			httpClient.getConnectionManager().shutdown();
+		}
+		catch(IOException e)
+		{
+			throw new DeltaCloudException("Error processing request to: " + requestUrl, e);
+		}
+		throw new DeltaCloudException("Could not execute request to:" + requestUrl);
+	}
+	
+	private static String readInputStreamToString(InputStream is) throws IOException
+	{
+		try
+		{
+			if (is != null)
+			{
+				StringBuilder sb = new StringBuilder();
+				String line;
+				
+				BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+				while ((line = reader.readLine()) != null) 
+				{
+					sb.append(line).append("\n");					
+				}
+			}
+		}
+		finally
+		{
+			is.close();
+		}
+		return "";
+	}
+	
+	@Override
+	public Instance createInstance(String imageId) throws DeltaCloudException 
+	{
+		return null;
+	}
+
+	public static Object getObjects(String xml)
+	{
+		JAXB.unmarshal(xml, type)
+		return null;
+	}
+	
+	@Override
+	public Instance createInstance(String imageId, String flavor, String realm) throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Flavor listFlavor(String flavorId) throws DeltaCloudException 
+	{
+		String flavors = sendRequest("/flavors/" + flavorId);
+		return null;
+	}
+
+	@Override
+	public List<Flavor> listFlavors() throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Image> listImages() throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Image listImages(String imageId) throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Instance> listInstance() throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Instance listInstances(String instanceId) throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Realm> listRealms() throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Realm listRealms(String realmId) throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void rebootInstance(String instanceId) throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void shutdownInstance(String instanceId) throws DeltaCloudException 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+}

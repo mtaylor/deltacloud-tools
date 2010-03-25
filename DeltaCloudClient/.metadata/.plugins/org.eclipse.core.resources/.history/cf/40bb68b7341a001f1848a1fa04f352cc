@@ -1,0 +1,7 @@
+package org.jboss.deltacloud.client;
+
+public class DeltaCloudException extends Exception 
+{
+	private static final long serialVersionUID = 1L;
+	
+}
