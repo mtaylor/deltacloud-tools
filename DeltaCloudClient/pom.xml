@@ -15,11 +15,36 @@
     		<version>4.0.1</version>
     		<scope>compile</scope>
   	</dependency>
+  	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.15</version>
+		<scope>compile</scope>
+		<exclusions>
+			<exclusion>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>javax.jms</groupId>
+				<artifactId>jms</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>com.sun.jdmk</groupId>
+				<artifactId>jmxtools</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>com.sun.jmx</groupId>
+				<artifactId>jmxri</artifactId>
+			</exclusion>
+		</exclusions>
+
+	</dependency>
   </dependencies>
 
   <build>
-	<sourceDirectory>${project.basedir}/src</sourceDirectory>
-    <plugins>
+  	<sourceDirectory>${project.basedir}/src</sourceDirectory>
+    	<plugins>
 		<plugin>
 			<inherited>true</inherited>
 			<groupId>org.apache.maven.plugins</groupId>
@@ -29,9 +54,8 @@
 		  		<target>1.6</target>
 			</configuration>
 		</plugin>
-    </plugins>
+    	</plugins>
   </build>
-
 </project>
 
 

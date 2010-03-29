@@ -28,6 +28,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -35,6 +36,8 @@ import org.xml.sax.InputSource;
 
 public class DeltaCloudClient implements API 
 {
+	public static Logger logger = Logger.getLogger(DeltaCloudClient.class);
+	
 	private static enum DCNS
 	{ 
 		INSTANCES, REALMS, IMAGES, FLAVORS, START, STOP, REBOOT, DESTROY;
@@ -56,6 +59,9 @@ public class DeltaCloudClient implements API
 	
 	public DeltaCloudClient(URL url, String username, String password) throws MalformedURLException
 	{
+		
+		logger.debug("Creating new Delta Cloud Client for Server: " + url);
+		
 		this.baseUrl = url;
 		
 		this.username = username;
@@ -69,7 +75,8 @@ public class DeltaCloudClient implements API
         httpClient.getCredentialsProvider().setCredentials(new AuthScope(baseUrl.getHost(), baseUrl.getPort()), new UsernamePasswordCredentials(username, password));
         
 		String requestUrl = baseUrl.toString() + path;
-		System.out.println("Retrieving From: " + requestUrl);
+		logger.debug("Sending Request to: " + requestUrl);
+		
 		try
 		{
 			HttpUriRequest request = null;
@@ -82,20 +89,25 @@ public class DeltaCloudClient implements API
 				request = new HttpGet(requestUrl);
 			}
 			
-			request.setHeader("Accept", "text/xml");  
+			request.setHeader("Accept", "application/xml");
 			HttpResponse httpResponse = httpClient.execute(request);
 			
 			HttpEntity entity = httpResponse.getEntity();
+			
+			
 			if (entity != null)
 			{
 				InputStream is = entity.getContent();
 				String xml = readInputStreamToString(is);
 				httpClient.getConnectionManager().shutdown();
+				
+				logger.debug("Response\n" + xml);
 				return xml;
 			}
 		}
 		catch(IOException e)
 		{
+			logger.error("Error processing request to: " + requestUrl, e);
 			throw new DeltaCloudClientException("Error processing request to: " + requestUrl, e);
 		}
 		throw new DeltaCloudClientException("Could not execute request to:" + requestUrl);
@@ -127,7 +139,7 @@ public class DeltaCloudClient implements API
 		}
 		catch(Exception e)
 		{
-			throw new DeltaCloudClientException(e);
+			throw new DeltaCloudClientException("Error converting Response to String", e);
 		}
 		return "";
 	}
@@ -149,7 +161,8 @@ public class DeltaCloudClient implements API
 	@Override
 	public Flavor listFlavor(String flavorId) throws DeltaCloudClientException 
 	{
-		return JAXB.unmarshal(sendRequest(DCNS.FLAVORS + "/" + flavorId, RequestType.GET), Flavor.class);
+		String request = DCNS.FLAVORS + "/" + flavorId;
+		return JAXB.unmarshal(sendRequest(request, RequestType.GET), Flavor.class);
 	}
 
 	@Override
@@ -309,7 +322,6 @@ public class DeltaCloudClient implements API
 		{
 			StringWriter writer = new StringWriter();
 			Transformer t = TransformerFactory.newInstance().newTransformer();
-			//t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 			t.transform(new DOMSource(node), new StreamResult(writer));
 			return writer.toString();
 		} 
