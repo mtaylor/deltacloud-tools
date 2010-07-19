@@ -1,4 +1,4 @@
-package org.jboss.deltacloud.client;
+package org.deltacloud.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;

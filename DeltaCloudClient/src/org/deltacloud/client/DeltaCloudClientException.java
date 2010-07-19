@@ -1,4 +1,4 @@
-package org.jboss.deltacloud.client;
+package org.deltacloud.client;
 
 public class DeltaCloudClientException extends Exception 
 {

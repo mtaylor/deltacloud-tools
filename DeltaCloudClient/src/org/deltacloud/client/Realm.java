@@ -1,4 +1,4 @@
-package org.jboss.deltacloud.client;
+package org.deltacloud.client;
 
 import javax.xml.bind.annotation.XmlElement;
 
