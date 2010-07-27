@@ -1,0 +1,49 @@
+=============================== DeltaCloud Java Client Library =======================================
+
+ This project offers a Java Client for interacting with the DeltaCloud API.
+
+======================================================================================================
+
+Contents: 
+
+1. Build Library
+2. Dependencies
+3. Examples: can be found in examples/../Driver.java
+4. Release Notes
+
+
+1. Build Library/Documentation  ====================================================================================
+
+DeltaCloud Client Lib requires Apache Maven for building, see "http://maven.apache.org" for installation instructions.
+
+Once Maven is installed, go to the directory where you checked out the project, this should contain the maven build 
+file "pom.xml".  See below for instructions on how to build the client jar and java doc.
+  * Client Jar: run command `mvn package` - This will build the client jar file "deltacloud-client-<version>.jar" 
+    and place it in the "target" dir
+  * JavaDoc: mvn javadoc:javadoc - This will build the javadoc and place it in the "target/site/apidocs" dir
+
+This should generate the deltacloud-client.jar in the target directory.
+
+2. Dependencies =====================================================================================================
+
+DeltaCloud Java Client depends on the following: 
+ - Apache HTTPComonents
+ - Apache log4j
+ - JDOM
+
+3. Examples =========================================================================================================
+
+For examples on how to use the DeltaCloud client lib see: Driver.java in examples dir
+
+4. Release Notes ====================================================================================================
+
+ N.B. Requires New Depenedency: JDOM see: http://www.jdom.org/
+
+ The Major changes in this release are highlighted below:
+
+* Change Package name to: org.deltacloud
+* Move from Flavors to HardwareProfiles.
+* Change to API methods reboot, stop, etc... Replace with the "performInstanceAction" method.  (Better matchs DC API Model).
+* Updated HardwareProfile contents to use Properties, Enums, Params, Range.  To conincide with changes to API.
+* Updated Objects to Map to DC NameSpace, using Custom Schema. (To allow smoother update process).
+* Added JDOM NameSpace injection to API Response for JAXB Mappings.

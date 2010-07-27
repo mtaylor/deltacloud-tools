@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.deltacloud.org/deltacloud.xsd"
+           xmlns="http://www.deltacloud.org/deltacloud.xsd">
+
+  <!-- attributes -->
+  <xs:attribute name="id" type="xs:string"/>
+  <xs:attribute name="href" type="xs:string"/>
+  <xs:attribute name="name" type="xs:string"/>
+  <xs:attribute name="unit" type="xs:string"/>
+  <xs:attribute name="value" type="xs:string"/>
+  <xs:attribute name="method" type="xs:string"/>
+  <xs:attribute name="rel" type="xs:string"/>
+  <xs:attribute name="operation" type="xs:string"/>
+  <xs:attribute name="first" type="xs:string"/>
+  <xs:attribute name="last" type="xs:string"/>
+  
+  <!-- simple types -->
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="owner_id" type="xs:string"/>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="architecture" type="xs:string"/>
+  <xs:element name="state" type="xs:string"/>
+  <xs:element name="limit" type="xs:string"/>
+  <xs:element name="address" type="xs:string"/>
+
+  <xs:attribute name="kind">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="fixed"/>
+        <xs:enumeration value="enum"/>
+        <xs:enumeration value="range"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+
+  <!--  Instances -->
+  <xs:element name="instances">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element ref="instance"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="instance">
+    <xs:complexType>
+        <xs:all>
+          <xs:element ref="name"/>
+          <xs:element ref="owner_id"/>
+          <xs:element ref="image"/>
+          <xs:element ref="hardware_profile"/>
+          <xs:element ref="realm"/>
+          <xs:element ref="state"/>
+          <xs:element ref="public_addresses"/>
+          <xs:element ref="private_addresses"/>
+          <xs:element ref="actions"/>
+      </xs:all>
+      <xs:attribute ref="href"/>
+      <xs:attribute ref="id"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="public_addresses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="address" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="private_addresses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="address"  minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="actions">
+     <xs:complexType>
+       <xs:sequence>
+         <xs:element ref="link" minOccurs="0" maxOccurs="unbounded"/>
+       </xs:sequence>
+     </xs:complexType>
+  </xs:element>
+
+  <xs:element name="link">
+    <xs:complexType>
+      <xs:attribute ref="rel"/>
+      <xs:attribute ref="href"/>
+      <xs:attribute ref="method"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--  Images -->
+  <xs:element name="images">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="image" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="image">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="name" minOccurs="0"/>
+        <xs:element ref="owner_id" minOccurs="0"/>
+        <xs:element ref="description" minOccurs="0"/>
+        <xs:element ref="architecture" minOccurs="0"/>
+      </xs:all>
+      <xs:attribute ref="href"/>
+      <xs:attribute ref="id"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Realms -->
+  <xs:element name="realms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="realm" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="realm">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="name" minOccurs="0"/>
+        <xs:element ref="state" minOccurs="0"/>
+        <xs:element ref="limit" minOccurs="0"/>
+      </xs:all>
+      <xs:attribute ref="href"/>
+      <xs:attribute ref="id"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Hardware Profiles -->
+  <xs:element name="hardware_profiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="hardware_profile"  minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="hardware_profile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="property" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="id"/>
+	  <xs:attribute ref="href"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="property">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="param" minOccurs="0"/>
+        <xs:element ref="enum" minOccurs="0"/>
+        <xs:element ref="range" minOccurs="0"/>
+      </xs:all>
+      <xs:attribute ref="name"/>
+      <xs:attribute ref="kind"/>
+      <xs:attribute ref="unit"/>
+      <xs:attribute ref="value"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="param">
+    <xs:complexType>
+      <xs:attribute ref="href"/>
+      <xs:attribute ref="name"/>
+      <xs:attribute ref="method"/>
+      <xs:attribute ref="operation"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="entry">
+    <xs:complexType>
+      <xs:attribute ref="value"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="enum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="entry" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="range">
+    <xs:complexType>
+      <xs:attribute ref="first"/>
+      <xs:attribute ref="last"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

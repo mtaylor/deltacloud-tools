@@ -2,6 +2,11 @@ package org.deltacloud.client;
 
 import java.util.List;
 
+import org.deltacloud.HardwareProfile;
+import org.deltacloud.Image;
+import org.deltacloud.Instance;
+import org.deltacloud.Realm;
+
 public interface API 
 {
 	/**
@@ -19,15 +24,15 @@ public interface API
 	 */
 	public Realm listRealms(String realmId) throws DeltaCloudClientException;
 	
-	public List<Flavor> listFlavors() throws DeltaCloudClientException;
+	public List<HardwareProfile> listHardwareProfiles() throws DeltaCloudClientException;
 	
 	/**
-	 * Returns a Delta Cloud Flavors
-	 * @param flavorId
-	 * @return Delta Cloud Flavor
+	 * Returns a Delta Cloud HardwareProfile
+	 * @param hardware profile Id
+	 * @return Delta Cloud HardwareProfile
 	 * @throws DeltaCloudClientException
 	 */
-	public Flavor listFlavor(String flavorId) throws DeltaCloudClientException;
+	public HardwareProfile listHardwareProfile(String hardwareProfileId) throws DeltaCloudClientException;
 	
 	/**
 	 * Returns a List of Delta Cloud Images 
@@ -61,7 +66,7 @@ public interface API
 	
 	/**
 	 * Creates a new Delta Cloud Instance based on the Image specified by the Image ID.  Default parameters are used for the
-	 * Flavor, Realm and Name.  These are specified by the Delta Cloud Provider
+	 * HardwareProfile, Realm and Name.  These are specified by the Delta Cloud Provider
 	 * @param imageId 
 	 * @return The newly created Delta Cloud Instance
 	 * @throws DeltaCloudClientException
@@ -70,40 +75,23 @@ public interface API
 	
 	/**
 	 * Creates a new Delta Cloud Instance, the instance will be based on the Image specified by the instance ID.  It will be of 
-	 * type flavor and in the location realm
+	 * type hardwareProfile and in the location realm
 	 * @param imageId
-	 * @param flavor
+	 * @param hardwareProfile
 	 * @param realm
 	 * @param name
 	 * @return
 	 * @throws DeltaCloudClientException
 	 */
-	public Instance createInstance(String imageId, String flavor, String realm, String name) throws DeltaCloudClientException;
+	public Instance createInstance(String imageId, String hardwareProfile, String realm, String name) throws DeltaCloudClientException;
 	
+
 	/**
-	 * Starts a previously stopped Instance given the Instance ID
+	 * Performs an action on an instance, given the String action.  The available actions can be obtained from the 
+	 * getAvailableActions() method
+	 * @returns true if the action is available, false if it is not
 	 * @param instanceId
-	 * @throws DeltaCloudClientException
+	 * @throws DeltaCloudClientException in the event of a failure
 	 */
-	public void startInstance(String instanceId) throws DeltaCloudClientException;
-	
-	/**
-	 * Reboots a running Instance
-	 * @param instanceId
-	 * @throws DeltaCloudClientException
-	 */
-	public void rebootInstance(String instanceId) throws DeltaCloudClientException;
-	
-	/** Shuts down a running instance
-	 * @param instanceId
-	 * @throws DeltaCloudClientException
-	 */
-	public void shutdownInstance(String instanceId) throws DeltaCloudClientException;
-	
-	/** Destroys a previously Stopped Instance
-	 * 
-	 * @param instanceId
-	 * @throws DeltaCloudClientException
-	 */
-	public void destroyInstance(String instanceId) throws DeltaCloudClientException;
+	public boolean performInstanceAction(String instanceId, String action) throws DeltaCloudClientException;
 }
