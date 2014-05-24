@@ -85,6 +85,18 @@ public interface API
 	 */
 	public Instance createInstance(String imageId, String hardwareProfile, String realm, String name) throws DeltaCloudClientException;
 	
+	/**
+	 * Creates a new Delta Cloud Instance, the instance will be based on the Image specified by the instance ID.  It will be of 
+	 * type hardwareProfile and in the location realm. It will use specified keyName for ssh access.
+	 * @param imageId
+	 * @param hardwareProfile
+	 * @param realm
+	 * @param name
+	 * @param keyName
+	 * @return
+	 * @throws DeltaCloudClientException
+	 */
+	public Instance createInstance(String imageId, String hardwareProfile, String realm, String name, String keyName) throws DeltaCloudClientException;
 
 	/**
 	 * Performs an action on an instance, given the String action.  The available actions can be obtained from the 

@@ -73,7 +73,7 @@ public class DeltaCloudClient implements API
 			this.username = username;
 			this.password = password;
 
-			JAXBContext jc = JAXBContext.newInstance(ObjectFactory.class.getPackage().getName());
+			JAXBContext jc = JAXBContext.newInstance(org.deltacloud.ObjectFactory.class);
 
 			unmarshaller = jc.createUnmarshaller();
 			unmarshaller.setSchema(null);
@@ -88,6 +88,13 @@ public class DeltaCloudClient implements API
 	public Instance createInstance(String imageId, String hardwareProfileId, String realmId, String name) throws DeltaCloudClientException 
 	{
 		String query = "?image_id=" + imageId + "&hardware_profile_id=" + hardwareProfileId + "&realm_id=" + realmId + "&name=" + name + "&commit=create";
+		return unmarshall(sendRequest(DCNS.INSTANCES + query, RequestType.POST), Instance.class);
+	}
+	
+	@Override
+	public Instance createInstance(String imageId, String hardwareProfileId, String realmId, String name, String keyName) throws DeltaCloudClientException 
+	{
+		String query = "?image_id=" + imageId + "&hardware_profile_id=" + hardwareProfileId + "&realm_id=" + realmId + "&name=" + name + "&keyname=" + keyName + "&commit=create";
 		return unmarshall(sendRequest(DCNS.INSTANCES + query, RequestType.POST), Instance.class);
 	}
 
